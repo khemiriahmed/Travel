@@ -40,7 +40,7 @@ $(document).ready(function() {
     $('.slider .preview img').on('click', function() {
         var t = $(this).attr('src');
         $(this).addClass('active').siblings().removeClass('active');
-        $('.hero-spot').css("background-image", 'url(../' + t + ')');
+        $('.hero-spot').css("background-image", 'url(https://khemiriahmed.github.io/Travel/' + t + ')');
     });
 
 
