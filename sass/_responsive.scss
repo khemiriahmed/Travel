@@ -1,0 +1,66 @@
+@media (max-width: $maxSmall) {
+    .hero-spot {
+        .slider {
+            height: 100vh;
+            bottom: 0;
+            .preview {
+                @include flex-direction(column);
+                margin: 0;
+            }
+        }
+        .spot-left {
+            .info {
+                width: 100%;
+                padding-left: 10px;
+                h1 {
+                    font-size: 20px;
+                }
+                h2 {
+                    font-size: 18px;
+                }
+                p {
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $maxSmall) {
+    .best-tours,
+    .testimonials,
+    .info-txt,
+    .travel-tips,
+    footer {
+        .flex-center {
+            @include flex-wrap(wrap);
+            .cl-4 {
+                width: inherit;
+            }
+        }
+        .blc-info {
+            max-width: 200px;
+        }
+        .blc-testimonials {
+            max-width: 200px;
+        }
+        .blc-exp-world {
+            max-width: 200px;
+        }
+    }
+    .info-txt {
+        .cl-3 {
+            width: inherit;
+        }
+    }
+    .holiday-pack {
+        .blc.flex-center {
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+        }
+        .cl-6 {
+            width: inherit;
+        }
+    }
+}

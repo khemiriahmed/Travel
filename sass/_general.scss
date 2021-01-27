@@ -1,0 +1,628 @@
+// ===================================================================
+//  Template Name    : Travel
+// Author            : Ahmed khemiri
+// GitHub            : https://github.com/khemiriahmed/travel
+// Template Url      : https://khemiriahmed.github.io/Travel/
+//Contact Me         : khemiriahmed6@gmailcom 
+// ===================================================================
+* {
+    padding: 0;
+    margin: 0;
+    font-family: $Font-Primary;
+    @include prefixer(box-sizing, border-box, webkit moz o ms);
+}
+
+.hero-spot {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/img1.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    @include transition(0.9s all ease-in);
+    overflow: hidden;
+    .spot-left {
+        width: 50%;
+        height: 100vh;
+        background: rgba(86, 86, 86, 0.3);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        left: 0;
+        top: 0;
+        .info {
+            width: 85%;
+            color: $color_white;
+            position: absolute;
+            right: 0;
+            top: 35%;
+            transform: translateY(-50);
+            h1 {
+                font-size: 25px;
+                font-family: $Font-Secondary;
+                letter-spacing: 5px;
+            }
+            h2 {
+                font-family: "Padauk", sans-serif;
+                font-size: $main-Size + 33;
+            }
+            p {
+                color: #f0eef1;
+                font-size: $main-Size;
+                margin: 20px 0;
+                line-height: 18px;
+            }
+        }
+    }
+    .slider {
+        @include flexbox;
+        @include align-items(center);
+        position: absolute;
+        right: 30px;
+        bottom: 50px;
+        #prev,
+        #next {
+            width: 32px;
+            cursor: pointer;
+        }
+        i {
+            color: $color-white;
+        }
+        .preview {
+            @include flexbox;
+            @include align-items(center);
+            margin: 0 60px;
+            img {
+                width: 60px;
+                margin: 0 10px;
+                @include opacity(0.4);
+                cursor: pointer;
+                @include transition(all .9s ease-in-out);
+            }
+            .active {
+                @include flexbox;
+                border: 3px solid $color_white;
+                width: 100px;
+                @include opacity(1);
+            }
+        }
+    }
+    .plane {
+        position: absolute;
+        width: 200px;
+        top: 90%;
+        z-index: 77777;
+        @include transition(0.5s);
+        @include prefixer(animation,
+        fly 5s linear infinite,
+        webkit moz o ms);
+        animation: fly 5s linear infinite;
+    }
+    .btn-start,
+    h5 {
+        position: absolute;
+        top: 80%;
+        left: 42%;
+        width: 90px;
+    }
+    h5 {
+        color: $color_white;
+        font-size: $main-Size+4;
+        font-family: $Font-Secondary;
+        top: 95%;
+        width: 50%;
+    }
+    .fly-game.pause {
+        .plane {
+            animation-play-state: paused;
+        }
+    }
+    .ovelay {
+        background-color: rgba(14, 14, 14, 0.3);
+        height: 100%;
+    }
+    @include keyframes(fly) {
+        0% {
+            left: -10px;
+        }
+        20% {
+            left: 20%;
+            transform: rotate(-22deg);
+            top: 90%;
+        }
+        40% {
+            left: 40%;
+            transform: rotate(-22deg);
+            top: 50%;
+        }
+        60% {
+            left: 60%;
+            transform: rotate(-22deg);
+            top: 30%;
+        }
+        80% {
+            left: 80%;
+            top: 10%;
+        }
+        100% {
+            left: 101%;
+            top: 0%;
+            overflow: hidden;
+        }
+    }
+}
+
+.txt-ctr {
+    text-align: center;
+}
+
+.mtp {
+    margin: 50px 0;
+}
+
+.ptb {
+    padding: 50px 0;
+    h1 {
+        text-transform: capitalize;
+        font-family: $Font-Secondary;
+        color: $color_texte;
+        letter-spacing: 5px;
+    }
+    h2 {
+        color: $color_black;
+        text-transform: uppercase;
+        font-size: $main-Size + 14;
+    }
+    p {
+        color: $color_white;
+        letter-spacing: 2px;
+    }
+}
+
+.destination,
+.holiday-pack {
+    background-color: $color_primary;
+    margin-left: 0;
+    .blc {
+        h1,
+        h2 {
+            color: $color_white;
+        }
+    }
+    .cl-3 {
+        width: inherit;
+    }
+}
+
+.img-destination {
+    position: relative;
+    .overlay- {
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        @include transition(all 0.5s ease);
+    }
+    img {
+        display: block;
+        max-width: 100%;
+        margin: auto;
+    }
+    &:hover {
+        .overlay- {
+            @extend .overlay;
+            @include opacity(0.7);
+            background-color: $color-primary !important;
+            visibility: visible;
+        }
+    }
+}
+
+.img-festival {
+    max-width: 300px;
+    margin: auto;
+    z-index: 1;
+    margin-right: 10px;
+    @include transition(all 0.5s ease-in-out);
+    &:hover {
+        @include prefixer(transform,
+        scale(1.14),
+        webkit o moz ms);
+    }
+    .link {
+        @include flexbox;
+        @include justify-content(center);
+        @include align-items(center);
+        height: 100%;
+        i {
+            color: $color-white;
+        }
+        a:hover {
+            i {
+                color: $color_secondary;
+            }
+        }
+    }
+}
+
+.position {
+    position: relative;
+    img {
+        display: block;
+    }
+    .overlay- {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        h3 {
+            color: $color_white;
+            span {
+                color: $color_secondary;
+            }
+        }
+    }
+}
+
+.best-tours,
+.gallery,
+.travel-tips {
+    h3 {
+        text-transform: uppercase;
+        font-size: $main-Size;
+    }
+    h4 {
+        color: $color-texte;
+        text-transform: capitalize;
+    }
+    p {
+        color: $color_black;
+        i {
+            color: $color_primary;
+        }
+    }
+    .blc-exp-world {
+        position: relative;
+        max-width: 300px;
+        margin: auto;
+        .price {
+            color: $color_primary;
+            font-size: $main-Size + 13;
+        }
+        p {
+            letter-spacing: 0;
+            color: $color_texte;
+        }
+        img {
+            position: relative;
+        }
+        .abs- {
+            position: relative;
+        }
+        .review {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 100px 100px;
+            border-color: transparent transparent $color_secondary transparent;
+            content: "";
+            display: block;
+            z-index: 9999;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            p {
+                position: absolute;
+                right: 7px;
+                top: 52px;
+                color: $color_white;
+                line-height: 18px;
+                text-transform: uppercase;
+                font-size: 12px;
+                i {
+                    color: $color_white;
+                }
+                span {
+                    display: block;
+                }
+            }
+        }
+        button:after {
+            background-color: $color_secondary;
+        }
+        button:before {
+            background-color: $color_primary;
+        }
+        .rect--expl {
+            @include opacity(0.8);
+            &:before {
+                background: $color_primary;
+            }
+        }
+    }
+}
+
+.gallery {
+    .cl-4:hover {
+        h4 {
+            color: $color_secondary;
+        }
+    }
+}
+
+.holiday-pack {
+    video {
+        -o-object-fit: cover;
+        object-fit: cover;
+        outline: none;
+    }
+    h1 {
+        font-size: $main-Size + 40;
+        color: $color_white;
+        text-transform: uppercase;
+    }
+    h2 {
+        font-size: $main-Size + 20;
+        color: $color_white;
+        text-transform: capitalize;
+        letter-spacing: 4px;
+    }
+    p {
+        color: $color_white;
+    }
+    h4 {
+        color: $color_white;
+        font-size: $main-Size + 30;
+        span {
+            font-size: $main-Size + 4;
+        }
+    }
+    a {
+        color: $color_white !important;
+        &:after {
+            background-color: $color_secondary;
+        }
+        &:before {
+            background-color: $color_white;
+        }
+        &:hover {
+            color: $color_black !important;
+        }
+    }
+}
+
+.testimonials {
+    .blc-testimonials {
+        max-width: 300px;
+        margin: auto;
+        p {
+            color: $color-texte;
+            font-size: 14px;
+            @include transition(all .5s ease-in);
+        }
+        h2 {
+            font-size: $main-Size;
+        }
+        i {
+            color: #f08a30;
+        }
+        &:hover {
+            p {
+                color: $color_black;
+            }
+            h2 {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+.info-txt {
+    background-image: url(../img/bg-.jpg);
+    background-size: cover;
+    .overlay {
+        @include opacity(0.8);
+        i {
+            color: $color_white;
+            @include transition(all .5s ease-in);
+        }
+        h2,
+        p {
+            color: $color_white;
+            text-transform: capitalize;
+            @include transition(all .5s ease-in);
+        }
+        .blc-info:hover {
+            i,
+            h2,
+            p {
+                color: $color_black;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.travel-tips {
+    .date {
+        text-transform: uppercase;
+        font-size: 13px;
+        color: $color_texte;
+    }
+    .btn-read {
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-primary;
+        @include prefixer(transition,
+        0.5s,
+        moz o webkit ms);
+        font-size: 13px;
+        &:hover {
+            text-decoration: underline;
+            color: $color-secondary;
+        }
+    }
+}
+
+.overlay {
+    background-color: $color_primary;
+    height: 100%;
+    width: 100%;
+}
+
+.slider {
+    overflow: hidden;
+    position: relative;
+    .wrapper {
+        margin: auto;
+        overflow: hidden;
+        .p1.activeText {
+            position: relative;
+            left: 0;
+            opacity: 1;
+        }
+        .p1 {
+            position: absolute;
+            left: 100%;
+            width: 100%;
+            top: 0;
+            opacity: 0;
+            transition: left 1.8s, opacity 0.5s ease;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 100px;
+            background: $color_white;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            &.active {
+                background: $color-secondary;
+            }
+        }
+    }
+}
+
+.arrows {
+    color: rgba(255, 255, 255, 0.79);
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+    cursor: pointer;
+}
+
+.next {
+    border-bottom: 6px solid;
+    border-left: 6px solid;
+    transform: rotate(-135deg);
+    right: 10px;
+    z-index: 9999;
+}
+
+.prev {
+    border-bottom: 6px solid;
+    border-left: 6px solid;
+    transform: rotate(45deg);
+    left: 10px;
+    z-index: 9999;
+}
+
+.blc-exp-world {
+    overflow: hidden;
+    .rect- {
+        width: 750px;
+        height: 200px;
+        background: $color_white;
+        display: block;
+        position: absolute;
+        top: 170%;
+        left: -78%;
+        @include prefixer(transform,
+        rotate(30deg),
+        moz webkit o ms);
+        z-index: 5;
+        opacity: 0.9;
+        @include transition(all 0.3s ease-in-out);
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            position: relative;
+            height: 100%;
+            background: #f07306;
+            transform: translateY(200px);
+            z-index: 2;
+            @include transition(all 0.3s ease-in-out);
+            transition-delay: 0.1s;
+        }
+    }
+    &:hover .rect- {
+        top: 75%;
+    }
+    &:hover .rect-:before {
+        transform: translateY(15px);
+    }
+    .hvr-rect {
+        position: relative;
+        overflow: hidden;
+        max-height: 200px;
+        p {
+            position: absolute;
+            top: 70%;
+            left: -100%;
+            text-transform: capitalize;
+            color: $color_white !important;
+            font-size: 20px;
+            z-index: 8;
+            @include prefixer( transition,
+            all 0.6s ease,
+            webkit moz o ms);
+        }
+        ul {
+            list-style: none;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            z-index: 9;
+            li {
+                display: inline-block;
+                font-size: 16px;
+                margin: 8px;
+                color: $color_white;
+                @include transition(all 0.2s ease-in-out);
+                @include prefixer( transform,
+                translateY(100px),
+                webkit moz o ms);
+                &:nth-child(2) {
+                    transition-delay: 0.2s;
+                }
+                &:nth-child(3) {
+                    transition-delay: 0.3s;
+                }
+                &:nth-child(4) {
+                    transition-delay: 0.4s;
+                }
+            }
+        }
+    }
+    &:hover {
+        .hvr-rect {
+            p {
+                left: 6%;
+            }
+            li {
+                @include prefixer( transform,
+                translateY(0px),
+                webkit moz o ms);
+            }
+        }
+    }
+}

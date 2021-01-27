@@ -1,0 +1,43 @@
+footer {
+    background-color: $bg_footer;
+    color: $color_white;
+    .logo,
+    .link {
+        flex: 1;
+    }
+    .social-media,
+    .contact-us,
+    .information {
+        flex: 1;
+        .list {
+            @include flexbox;
+            @include flex-direction(column)
+        }
+        .list-social {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: $color_titre;
+            @include transition(all .2s ease-in);
+            &:hover {
+                text-decoration: underline;
+                color: $color_primary;
+            }
+        }
+        h1 {
+            color: $color_titre;
+        }
+    }
+    .copy-right {
+        p {
+            color: $color_titre;
+            font-weight: bold;
+            span {
+                color: $color_primary;
+                font-size: $main-Size+6;
+               
+            }
+        }
+    }
+}

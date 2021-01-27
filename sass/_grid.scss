@@ -1,0 +1,48 @@
+%grid {}
+
+.flex-center {
+    @include flexbox;
+    @include justify-content(center);
+}
+
+@for $i from 1 through 12 {
+    .cl-#{$i} {
+        width: (100% /(12/$i));
+        @extend %grid;
+    }
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        // max-width: 540px;
+        // padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        //max-width: 720px;
+        //padding: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        // max-width: 960px;
+        // padding: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}

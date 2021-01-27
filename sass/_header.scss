@@ -1,0 +1,139 @@
+.main-header,
+.main-menu {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+    width: 100%;
+    margin: auto;
+    position: fixed;
+    @include transition(all .5s ease-in-out);
+    z-index: 10;
+    .logo {
+        max-height: 50px;
+        margin: 30px 0;
+        cursor: pointer;
+    }
+    &.header-fxd {
+        background-color: #f7efef;
+        height: 66px;
+        @include prefixer(opacity, 0.8, webkit o moz ms);
+    }
+    .nav-icon {
+        width: 55px;
+        height: 45px;
+        position: relative;
+        @include transform-rt(0deg);
+        @include transition(.5s ease-in-out);
+        cursor: pointer;
+        span {
+            @include bRaduis(9px);
+            display: block;
+            position: absolute;
+            height: 7px;
+            width: 100%;
+            background: $color_primary;
+            @include opacity(1);
+            left: 0;
+            @include transform-rt(0deg);
+            @include transition(.25s ease-in-out);
+            &:nth-child(1) {
+                top: 0px;
+            }
+            &:nth-child(2) {
+                top: 18px;
+            }
+            &:nth-child(3) {
+                top: 36px;
+            }
+        }
+        &.open {
+            span:nth-child(1) {
+                top: 18px;
+                @include transform-rt(135deg);
+            }
+            span:nth-child(2) {
+                @include opacity(0);
+                left: -60px;
+            }
+            span:nth-child(3) {
+                top: 18px;
+                @include transform-rt(-135deg);
+            }
+        }
+    }
+}
+
+.fa,
+.far {
+    position: relative;
+    display: table-cell;
+    width: 55px;
+    height: 36px;
+    text-align: center;
+    top: 12px;
+}
+
+.main-menu {
+    background: #F7F7F7;
+    height: 100%;
+    width: 55px;
+    left: -55px;
+    overflow: hidden;
+    @include transition(.2s linear);
+    @include opacity(1);
+    @include prefixer( box-shadow, 1px 0 15px rgba(0, 0, 0, 0.07), webkit moz o ms);
+    &:hover {
+        width: 250px;
+        overflow: hidden;
+        @include opacity(1);
+    }
+    &.active {
+        left: 0;
+    }
+    ul {
+        margin: 7px 0;
+        outline: 0;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        li {
+            position: relative;
+            display: block;
+            width: 250px;
+            a {
+                position: relative;
+                width: 255px;
+                display: table;
+                border-spacing: 0;
+                color: #8a8a8a;
+                font-size: 13px;
+                text-decoration: none;
+                @include transition(all .14s linear);
+                font-family: 'Strait', sans-serif;
+                border-top: 1px solid #f2f2f2;
+                text-shadow: 1px 1px 1px #fff;
+                i {
+                    font-size: $main-Size+1;
+                }
+                .nav-text {
+                    position: relative;
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 190px;
+                    font-family: 'Titillium Web', sans-serif;
+                }
+                &:focus {
+                    text-decoration: none;
+                    border-left: 0px solid #F7F7F7;
+                }
+                &:hover {
+                    text-decoration: none;
+                    border-left: 0px solid #F7F7F7;
+                    color: #fff;
+                    background-color: $color_primary;
+                    text-shadow: 0px 0px 0px;
+                }
+            }
+        }
+    }
+}

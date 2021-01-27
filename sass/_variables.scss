@@ -1,0 +1,62 @@
+/*---------------------------------------------------------------------------------*/
+
+
+/*-*-*-*-*-*-*-**-*- designé pour déclaré les couleurs -*-*-*-*-*--*-*/
+
+
+/*---------------------------------------------------------------------------------*/
+
+$color_primary: #0f93d4;
+$color_secondary: #f3872c;
+$color_arriere_plan: #e6e6e6;
+$color_menu_hover: #f19e0d;
+$color_black: #000;
+$color_menu: #3352a2;
+$color_titre: #5a5a5a;
+$color_texte: #999;
+$color_white: #fff;
+$color_footer: #f2f2f2;
+$color_border: #e5e5e5;
+$color_botton_hover: #e3b371;
+$bg_footer:#dedede;
+
+/*---------------------------------------------------------------------------------*/
+
+
+/*-*-*-*-*-*-*-**-*- designé pour déclaré les Fonts -*-*-*-*-*--*-*/
+
+
+/*---------------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url("../webfonts/DancingScript-Medium.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Padauk';
+    src: url("../webfonts/Padauk-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Padauk Bold';
+    font-weight: bold;
+    src: url("../webfonts/Padauk-Bold.ttf") format('truetype');
+}
+
+$Font-Primary:'Padauk',sans-serif;
+$Font-Secondary:"Dancing Script",cursive;
+$Font-Bold: 'Padauk Bold',sans-serif;
+$main-Size:16px;
+
+
+/*---------------------------------------------------------------------------------*/
+
+
+/*-*-*-*-*-*-*-**-*- Media Querie -*-*-*-*-*--*-*/
+
+
+/*---------------------------------------------------------------------------------*/
+$maxMobile:767px;
+$minSmall:768px;
+$maxSmall:991px;
