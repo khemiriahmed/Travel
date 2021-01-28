@@ -1583,6 +1583,17 @@ For example padding-top: 4px; will create a CSS class:
   transform: translateY(0px);
 }
 
+.scroll-top {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 13px;
+}
+.scroll-top svg {
+  fill: #f3872c;
+  height: 50px;
+}
+
 footer {
   background-color: #dedede;
   color: #fff;
@@ -1651,6 +1662,7 @@ footer .copy-right p span {
   .hero-spot .slider {
     height: 100vh;
     bottom: 0;
+    right: 10px;
   }
   .hero-spot .slider .preview {
     -webkit-box-direction: normal;
@@ -1660,6 +1672,10 @@ footer .copy-right p span {
     -ms-flex-direction: column;
     flex-direction: column;
     margin: 0;
+  }
+  .hero-spot .slider #prev,
+.hero-spot .slider #next {
+    width: 23px;
   }
   .hero-spot .spot-left .info {
     width: 100%;

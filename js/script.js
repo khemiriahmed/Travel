@@ -76,19 +76,33 @@ $(document).ready(function() {
     });
 
 
+    //Scroll To TOP Button Fade
+    $('.scroll-top').on('click', function(event) {
+        event.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 1000);
+    });
 
 
     //If Scroll Fixed top
     $(window).scroll(function() {
-
         var height = $(window).scrollTop();
-
-
         if (height > 100) {
             $('.main-header').addClass('header-fxd');
 
         } else {
             $('.main-header').removeClass('header-fxd');
+        }
+
+
+        //Button Scroll  FadeIn If Scroll Top Superieur 1000px
+        var scrollToTop = $('.scroll-top');
+        if ($(window).scrollTop() > 1000) {
+            scrollToTop.fadeIn(400);
+        } else {
+            scrollToTop.fadeOut(400);
+
         }
 
     });

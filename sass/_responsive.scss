@@ -3,9 +3,14 @@
         .slider {
             height: 100vh;
             bottom: 0;
+            right: 10px;
             .preview {
                 @include flex-direction(column);
                 margin: 0;
+            }
+            #prev,
+            #next {
+                width: 23px;
             }
         }
         .spot-left {

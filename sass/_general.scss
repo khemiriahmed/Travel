@@ -626,3 +626,14 @@
         }
     }
 }
+
+.scroll-top {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 13px;
+    svg {
+        fill: #f3872c;
+        height: 50px;
+    }
+}
